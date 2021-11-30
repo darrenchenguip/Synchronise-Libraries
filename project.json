@@ -46,6 +46,12 @@
         "testCaseId": "20674303-89d7-4cac-978e-8477f5acb8c3",
         "dataVariationFilePath": ".variations\\tc1_GetBearerToken_Sheet1.json",
         "fileName": "Test Cases\\tc01_GetBearerToken.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "bd87a5b0-5b20-4801-87b8-8fd96d29e962",
+        "dataVariationFilePath": ".variations\\tc01_GetLibrary_Sheet1.json",
+        "fileName": "Test Cases\\tc01_GetLibrary.xaml"
       }
     ],
     "modernBehavior": false
