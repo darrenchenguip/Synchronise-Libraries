@@ -1,12 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_OrchestratorHostname="orch.dc.local" this:Main.in_TenantName="Default" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="The FQDN of the Orchestrator instance you want to send the request to e.g. orch.dc.local." Name="in_OrchestratorHostname" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="The tenant you want to authenticate to." Name="in_TenantName" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The bearer token for subsequent API calls" Name="out_BearerToken" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The username for authentication." Name="in_Username" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The password for authentication." Name="in_Password" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1630,982</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1504,765</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -75,11 +78,11 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Tenant Bearer Token" sap:VirtualizedContainerService.HintSize="376,457" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get Tenant Bearer Token" sap:VirtualizedContainerService.HintSize="376,418" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="StatusCode" />
       <Variable x:TypeArguments="x:String" Name="Result" />
@@ -92,7 +95,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" sap2010:Annotation.AnnotationText="Send authentication request to Orchestrator." Body="[&quot;{&quot;&quot;tenancyName&quot;&quot; : &quot;&quot;&quot; + in_TenantName + &quot;&quot;&quot;,&quot;&quot;usernameOrEmailAddress&quot;&quot; : &quot;&quot;darren&quot;&quot;,&quot;&quot;password&quot;&quot; : &quot;&quot;Password$&quot;&quot;}&quot;]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://&quot; + in_OrchestratorHostname + &quot;/api/account/authenticate&quot;]" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" ResponseHeaders="[Headers]" Result="[Result]" StatusCode="[StatusCode]" TimeoutMS="6000">
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" sap2010:Annotation.AnnotationText="Send authentication request to Orchestrator." Body="[&quot;{&quot;&quot;tenancyName&quot;&quot; : &quot;&quot;&quot; + in_TenantName + &quot;&quot;&quot;,&quot;&quot;usernameOrEmailAddress&quot;&quot; : &quot;&quot;&quot; + in_Username + &quot;&quot;&quot;,&quot;&quot;password&quot;&quot; : &quot;&quot;&quot; + in_Password + &quot;&quot;&quot;}&quot;]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://&quot; + in_OrchestratorHostname + &quot;/api/account/authenticate&quot;]" sap:VirtualizedContainerService.HintSize="334,64" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" ResponseHeaders="[Headers]" Result="[Result]" StatusCode="[StatusCode]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -114,15 +117,25 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:HttpClient>
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[ResultJSONObject]" JsonString="[Result]" />
-    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" sap2010:Annotation.AnnotationText="Extract brearer token from response." DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[ResultJSONObject]" JsonString="[Result]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:DeserializeJson>
+    <Assign sap2010:Annotation.AnnotationText="Output bearer token to parent workflow." sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[BearerToken]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[out_BearerToken]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[ResultJSONObject.SelectToken("result").ToString]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[BearerToken]" />
   </Sequence>
 </Activity>
