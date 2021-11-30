@@ -45,8 +45,14 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
+      "filePath": "GetBearerToken.xaml",
+      "uniqueId": "fdf7fa08-9a9f-4d88-8202-815a234ef85d",
+      "input": [],
+      "output": []
+    },
+    {
       "filePath": "Main.xaml",
-      "uniqueId": "4294a0c5-78a0-48f6-9ddc-204de5820380",
+      "uniqueId": "b4e8ed35-ff8b-445d-9fed-01407617569d",
       "input": [],
       "output": []
     }
