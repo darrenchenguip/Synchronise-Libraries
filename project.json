@@ -8,7 +8,8 @@
     "UiPath.System.Activities": "[21.10.2]",
     "UiPath.Testing.Activities": "[1.4.4]",
     "UiPath.UIAutomation.Activities": "[21.10.3]",
-    "UiPath.WebAPI.Activities": "[1.9.2]"
+    "UiPath.WebAPI.Activities": "[1.9.2]",
+    "UiPathTeam.DatatablesComparison.Activities": "[2.0.0]"
   },
   "webServices": [],
   "entitiesStores": [],
