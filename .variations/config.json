@@ -7,6 +7,10 @@
     {
       "filePath": ".variations\\tc01_GetLibrary_Sheet1.json",
       "dataVariationType": "File"
+    },
+    {
+      "filePath": ".variations\\tc01_CompareLibraries_Sheet1.json",
+      "dataVariationType": "File"
     }
   ]
 }

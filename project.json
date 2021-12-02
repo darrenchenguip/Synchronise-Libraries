@@ -53,6 +53,12 @@
         "testCaseId": "bd87a5b0-5b20-4801-87b8-8fd96d29e962",
         "dataVariationFilePath": ".variations\\tc01_GetLibrary_Sheet1.json",
         "fileName": "Test Cases\\tc01_GetLibrary.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "846fa490-81f4-4e80-b750-5320034c22a2",
+        "dataVariationFilePath": ".variations\\tc01_CompareLibraries_Sheet1.json",
+        "fileName": "Test Cases\\tc01_CompareLibraries.xaml"
       }
     ],
     "modernBehavior": false
