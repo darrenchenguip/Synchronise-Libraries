@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1504,1474</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1662,1474</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>tc01_CompareLibraries_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -112,11 +112,17 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_Password">[LeftPassword]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Left Library" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="GetLibrary.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetAllPackageVersions workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="GetAllPackageVersions.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BearerToken">[LeftBearerToken]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorHostname">[LeftOrchestratorHostname]</InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_LibraryPackages">[LeftLibrary]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BearerToken">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LeftBearerToken" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorHostname">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="LeftOrchestratorHostname" />
+          </InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_AllPackageVersions">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="LeftLibrary" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Right Bearer Token" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetBearerToken.xaml">
@@ -128,11 +134,17 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_Password">[RightPassword]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Right Library" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="GetLibrary.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetAllPackageVersions workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="GetAllPackageVersions.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_BearerToken">[RightBearerToken]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorHostname">[RightOrchestratorHostname]</InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_LibraryPackages">[RightLibrary]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BearerToken">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="RightBearerToken" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorHostname">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="RightOrchestratorHostname" />
+          </InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_AllPackageVersions">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="RightLibrary" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>

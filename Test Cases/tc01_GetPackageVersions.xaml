@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1504,1049</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1662,1150</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -81,7 +81,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="tc01_GetPackageVersions" sap:VirtualizedContainerService.HintSize="618,984" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="tc01_GetPackageVersions" sap:VirtualizedContainerService.HintSize="618,1085" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="BearerToken" />
       <Variable x:TypeArguments="sd:DataTable" Name="PackageVersions" />
@@ -127,7 +127,7 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="576,373" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="576,474" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="Output" />
       </Sequence.Variables>
@@ -138,6 +138,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:OutputDataTable DataTable="[PackageVersions]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="534,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[Output]" />
       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="534,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[Output]" />
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="534,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Rows: &quot; + PackageVersions.Rows.Count.ToString]" />
       <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify that the 1st row contents are as expected" sap:VirtualizedContainerService.HintSize="534,61" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False" TakeScreenshotInCaseOfSucceedingAssertion="False">
         <uta:VerifyExpressionWithOperator.FirstExpression>
           <InArgument x:TypeArguments="x:String">[PackageVersions.Rows(0)("Key").ToString]</InArgument>
