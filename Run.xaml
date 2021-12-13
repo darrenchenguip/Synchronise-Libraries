@@ -191,7 +191,7 @@
         <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">290.5,242 290.5,272 280,272 280,298.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">290.5,242 290.5,272 290,272 290,288.5</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
             </scg:Dictionary>
@@ -281,16 +281,14 @@
                       </ActivityAction>
                     </ufa:FormActivity.DelayBody>
                     <ufa:FormActivity.FormFieldsCollection>
-                      <InArgument x:TypeArguments="scg:List(x:String)" x:Key="ResultsDropdown">
-                        <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="ResultsDropdown" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="scg:List(x:String)" x:Key="ResultsDropdown">[ResultsDropdown]</InArgument>
                     </ufa:FormActivity.FormFieldsCollection>
                   </ufa:FormActivity>
                 </Sequence>
               </State.Entry>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">191.5,298.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">201.5,288.5</av:Point>
                   <av:Size x:Key="ShapeSize">177,63</av:Size>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Double x:Key="StateContainerWidth">143</x:Double>
@@ -301,7 +299,7 @@
                 <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">280,361.5 280,391.5 263.3,391.5 263.3,509.5</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">290,351.5 290,381.5 283.3,381.5 283.3,429.5</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
                     </scg:Dictionary>
@@ -310,7 +308,7 @@
                     <State x:Name="__ReferenceID0" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">203,509.5</av:Point>
+                          <av:Point x:Key="ShapeLocation">223,429.5</av:Point>
                           <av:Size x:Key="ShapeSize">134,61</av:Size>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
@@ -341,11 +339,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="LeftAllPackageVersions" />
       <Variable x:TypeArguments="x:String" Name="RightBearerToken" />
       <Variable x:TypeArguments="sd:DataTable" Name="RightAllPackageVersions" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="ResultsDropdown">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(Of String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)]" Name="ResultsDropdown" />
       <Variable x:TypeArguments="sd:DataTable" Name="DifferencesAllPackageVersions" />
       <Variable x:TypeArguments="x:String" Name="Output" />
     </StateMachine.Variables>
