@@ -76,7 +76,7 @@
       {
         "editingStatus": "InProgress",
         "testCaseId": "b1df7181-9ebf-44a2-b3bb-ef767a179f7c",
-        "fileName": "TestCase.xaml"
+        "fileName": "Test Cases\\tc01_DownloadPackageVersion.xaml"
       }
     ],
     "modernBehavior": false
