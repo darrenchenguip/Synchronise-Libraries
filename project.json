@@ -72,6 +72,11 @@
         "testCaseId": "2b36716e-5d00-4241-a545-5ded7cc0916a",
         "dataVariationFilePath": ".variations\\tc01_GetAllPackageVersions_Sheet1.json",
         "fileName": "Test Cases\\tc01_GetAllPackageVersions.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b1df7181-9ebf-44a2-b3bb-ef767a179f7c",
+        "fileName": "Test Cases\\tc01_DownloadPackageVersion.xaml"
       }
     ],
     "modernBehavior": false
